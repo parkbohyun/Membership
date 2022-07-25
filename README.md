@@ -39,3 +39,23 @@ CONSTRAINT MEMBER_IDX_PK PRIMARY KEY (IDX)
 
 INSERT INTO ADMIN_ACCOUNTS VALUES (ADMIN_IDX_SEQ.nextval, 'admin', '1234');
 ```
+
+
+public void account() {
+		try {
+			accStage = new Stage(StageStyle.UTILITY);
+			Parent home = FXMLLoader.load(this.getClass().getResource("Account.fxml"));
+			
+			Scene scene = new Scene(home);
+			
+			accStage.initModality(Modality.WINDOW_MODAL);
+			accStage.initOwner(primaryStage);
+			accStage.setTitle("회원 가입");
+			accStage.setScene(scene);
+			accStage.setResizable(false);
+			accStage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
